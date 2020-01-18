@@ -945,7 +945,7 @@ function go(params)
     params = params or {
         width = 640;
         height = 480;
-        title = "Blend2d App"
+        title = "p5blend App"
     }
     params.width = params.width or 640;
     params.height = params.height or 480;
