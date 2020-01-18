@@ -1,6 +1,6 @@
-package.path = "../?.lua;"..package.path;
 
-require("p5")
+
+--require("p5")
 
 local ax = 200; ay = 320;
 local bx = 80; by = 160;

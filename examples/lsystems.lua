@@ -1,6 +1,4 @@
-package.path = "../?.lua;"..package.path;
 
-require("p5")
 
 -- TURTLE STUFF:
 local x, y; -- the current position of the turtle

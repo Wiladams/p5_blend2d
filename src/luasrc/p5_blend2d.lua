@@ -424,14 +424,7 @@ function rect(...)
 	return true;
 end
 
-local function calcEllipseParams(mode, ...)
-	local nargs = select('#',...)
-	--if nargs < 4 then return false end
-
-	local a = select(1, ...)
-	local b = select(2, ...)
-	local c = select(3,...)
-	local d = select(4,...)
+local function calcEllipseParams(mode, a, b, c, d)
 
 	if not d then 
 		d = c;
@@ -467,19 +460,17 @@ local function calcEllipseParams(mode, ...)
 	return cx, cy, rx, ry;
 end
 
-function ellipse(...)
-	local nargs = select('#',...)
-	if nargs < 3 then return false; end
-
+function ellipse(a, b, c, d)
 	
-	local cx, cy, rx, ry = calcEllipseParams(EllipseMode, ...)
+	local cx, cy, rx, ry = calcEllipseParams(EllipseMode, a,b, c, d)
 
+	local geo = ffi.new("struct BLEllipse", cx, cy, rx, ry)
 	if useFill then
-		appContext:fillEllipse(cx, cy, rx, ry)
+		appContext:fillEllipse(geo)
 	end
 	
 	if useStroke then
-		local bResult, err = appContext:strokeEllipse(cx, cy, rx, ry)
+		local bResult, err = appContext:strokeEllipse(geo)
 	end
 
 	return true

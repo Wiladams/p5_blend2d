@@ -1,8 +1,6 @@
-package.path = "../?.lua;"..package.path;
 
-require("p5")
 
-local Sudoku = require("sudoku")
+local Sudoku = require("sudoku_gen")
 local cellWidth = 40
 local cellHeight = 40
 local gridWidth = cellWidth * 9
