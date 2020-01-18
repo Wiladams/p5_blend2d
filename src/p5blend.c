@@ -549,8 +549,7 @@ struct Smain {
 // to get things going after the user script
 // has been loaded.
 const char * startupScript = "            \
-local p5 = require('p5')  \
-WinMan {startup = startup, frameRate=30}";
+local p5 = require('p5');";
 
 static int pmain(lua_State *L)
 {
@@ -587,6 +586,8 @@ static int pmain(lua_State *L)
   }
   if ((flags & FLAGS_VERSION)) print_version();
 
+  // run startup
+  dostring(L, startupScript, "=");
 
   s->status = runargs(L, argv, (script > 0) ? script : s->argc);
   if (s->status != 0) return 0;
@@ -595,8 +596,7 @@ static int pmain(lua_State *L)
     if (s->status != 0) 
       return 0;
 
-    // run startup
-    dostring(L, startupScript, "=");
+
   }
 
   if ((flags & FLAGS_INTERACTIVE)) {

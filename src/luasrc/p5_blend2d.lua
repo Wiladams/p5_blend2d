@@ -10,7 +10,7 @@
 local ffi = require("ffi")
 local C = ffi.C
 
-local b2d = require("blend2d.blend2d")
+local b2d = require("blend2d")
 
 local useStroke = true;
 local useFill = true;
@@ -541,7 +541,7 @@ function endShape(endKind)
 		if endKind == CLOSE then
 			path:polyTo(apts, npts)
 
-			appContext:fillPath(path)
+			appContext:fillPathD(path)
 		elseif endKind == STROKE then
 			appContext:strokePath(path)
 		end

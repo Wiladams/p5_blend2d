@@ -5,7 +5,7 @@ local bor, band = bit.bor, bit.band
 
 local min, max = math.min, math.max
 
-local blapi = require("blend2d.blend2d_ffi")
+local blapi = require("blend2d_ffi")
 
 --[[
     BLPath

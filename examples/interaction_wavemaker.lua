@@ -1,6 +1,5 @@
-package.path = "../?.lua;"..package.path;
 
-require("p5")
+
 local stats = require("P5status")()
 
 local t = 0; -- time variable
