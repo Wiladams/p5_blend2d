@@ -1,6 +1,4 @@
-package.path = "../?.lua;"..package.path;
 
-require("p5")
 
 local usingStroke = false;
 local usingFill = true;

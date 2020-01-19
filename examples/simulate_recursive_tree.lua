@@ -1,7 +1,3 @@
-package.path = "../?.lua;"..package.path;
-
-require("p5")
-
 
 local theta;
 

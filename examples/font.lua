@@ -1,6 +1,4 @@
-package.path = "../?.lua;"..package.path;
 
-require("p5")
 
 local MouseTarget = require("MouseTarget")
 local stats = require("P5Status")
