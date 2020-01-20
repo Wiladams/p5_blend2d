@@ -7,12 +7,9 @@
     Makes for a nice 'streamer' effect.
 
 ]]
-package.path = "../?.lua;"..package.path;
-
 
 local ffi = require("ffi")
 
-require("p5")
 local stats = require("P5Status")()
 
 
@@ -156,4 +153,4 @@ function keyPressed()
     reset();
 end
 
-go {width =1280, height=1024, frameRate = 15, title="Particle Comet"}
+go {width =1280, height=1024, frameRate = 30, title="Particle Comet"}

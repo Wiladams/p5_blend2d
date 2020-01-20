@@ -1,7 +1,3 @@
-package.path = "../?.lua;"..package.path;
-
-require("p5")
-
 
 local linear
 
@@ -21,7 +17,7 @@ end
 function setup()
     noLoop();
 
-    linear = BLGradientCore(BLLinearGradientValues({ 0, 0, width, height }));
+    linear = BLGradient(BLLinearGradientValues({ 0, 0, width, height }));
 
     linear:addStop(0.0, 0x70FFFFFF)
     linear:addStop(0.5, 0x70FFAF00)

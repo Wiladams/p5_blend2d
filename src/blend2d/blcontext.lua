@@ -1,5 +1,5 @@
 --
--- MUST be included through blend2d.lua, not independently
+-- SHOULD be included through blend2d.lua, not independently
 --
 -- since the BLContextCore is by far the biggest object, it makes
 -- sense to have it split out on its own for easy maintenance

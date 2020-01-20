@@ -19,8 +19,8 @@
 @set LJLIB=lib /nologo /nodefaultlib
 
 @set LUAC=luajit -b
-@set LJDLLNAME=lua51.dll
 @set LJLIBNAME=bin/lua51.lib
+@set BLLIBNAME=bin/blend2d.lib
 
 %LUAC% blend2d/blarray.lua blarray.obj
 %LUAC% blend2d/blcontext.lua blcontext.obj
@@ -29,7 +29,7 @@
 %LUAC% blend2d/blerror.lua blerror.obj
 %LUAC% blend2d/blpath.lua blpath.obj
 %LUAC% blend2d/enum.lua enum.obj
-@set BLEND2DLIB= blarray.obj blcontext.obj blend2d_ffi.obj blend2d.obj blerror.obj blpath.obj enum.obj
+@set BLFFILIB= blarray.obj blcontext.obj blend2d_ffi.obj blend2d.obj blerror.obj blpath.obj enum.obj
 
 
 @rem p5blend core library
@@ -48,7 +48,7 @@
 %LJCOMPILE% p5blend.c
 @if errorlevel 1 goto :BAD
 
-%LJLINK% /out:p5blend.exe %LJLIBNAME% p5blend.obj %CLIBS% %CORELIB% %BLEND2DLIB%
+%LJLINK% /out:p5blend.exe %LJLIBNAME% %BLLIBNAME% p5blend.obj %CLIBS% %CORELIB% %BLFFILIB%
 @if errorlevel 1 goto :BAD
 if exist p5blend.exe.manifest^
   %LJMT% -manifest p5blend.exe.manifest -outputresource:p5blend.exe

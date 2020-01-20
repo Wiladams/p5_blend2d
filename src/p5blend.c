@@ -132,7 +132,7 @@ static int docall(lua_State *L, int narg, int clear)
 
 static void print_version(void)
 {
-  fputs("bestdesk - Copyright 2019 William Adams ", stdout);
+  fputs("p5blend - Copyright 2019 William Adams ", stdout);
 }
 
 static void print_jit_status(lua_State *L)
@@ -506,43 +506,11 @@ static int handle_luainit(lua_State *L)
 }
 
 
-__declspec(dllexport)
-int RunLuaScript(void *s)
-{
-  char *codechunk = (char *)s;
-
-  int status=0;
-  lua_State *L = lua_open();  /* create the state */
-
-  if (L == NULL)
-  {
-    puts("RunLuaScript, cannot create state: not enough memory");
-    return -1;
-  }
-
-  // stop garbage collector during initialization
-  // open necessary libraries
-  lua_gc(L, LUA_GCSTOP, 0);
-  luaL_openlibs(L);
-  lua_gc(L, LUA_GCRESTART, -1);
-
-  // execute the specified script
-  //printf("RunLuaScript: %s\n", codechunk);
-  dostring(L, codechunk, "threadprogram");
-  //status = luaL_dostring(L, codechunk);
-
-  lua_close(L);
-
-  return status;
-}
-
-
 struct Smain {
   char **argv;
   int argc;
   int status;
 };
-
 
 
 // This is the startup script we need to run
