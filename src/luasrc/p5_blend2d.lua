@@ -417,8 +417,16 @@ function rect(...)
 		if useStroke then
 			appContext:strokeRectD(BLRect(x1, y1, rwidth, rheight))
 		end
-    elseif nargs == 5 then
-        -- do rounded rect
+	elseif nargs == 5 then
+		-- BUGBUG
+		-- do rounded rect
+		if useFill then
+			appContext:fillRectD(BLRect(x1, y1, rwidth, rheight))
+		end
+	
+		if useStroke then
+			appContext:strokeRectD(BLRect(x1, y1, rwidth, rheight))
+		end
 	end
 
 	return true;
