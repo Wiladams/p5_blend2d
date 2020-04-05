@@ -25,11 +25,11 @@
 %LUAC% blend2d/blarray.lua blarray.obj
 %LUAC% blend2d/blcontext.lua blcontext.obj
 %LUAC% blend2d/blend2d_ffi.lua blend2d_ffi.obj
-%LUAC% blend2d/blend2d.lua blend2d.obj
+%LUAC% blend2d/b2d.lua b2d.obj
 %LUAC% blend2d/blerror.lua blerror.obj
 %LUAC% blend2d/blpath.lua blpath.obj
 %LUAC% blend2d/enum.lua enum.obj
-@set BLFFILIB= blarray.obj blcontext.obj blend2d_ffi.obj blend2d.obj blerror.obj blpath.obj enum.obj
+@set BLFFILIB= blarray.obj blcontext.obj blend2d_ffi.obj b2d.obj blerror.obj blpath.obj enum.obj
 
 
 @rem p5blend core library

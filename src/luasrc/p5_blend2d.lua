@@ -10,7 +10,7 @@
 local ffi = require("ffi")
 local C = ffi.C
 
-local b2d = require("blend2d")
+local b2d = require("b2d")
 
 local useStroke = true;
 local useFill = true;

@@ -2,7 +2,7 @@
 local ffi = require("ffi")
 local C = ffi.C 
 
-local blapi = require("blend2d")
+local blapi = require("b2d")
 
 local function addStops(gradient, stops)
     if not stops then return false end
